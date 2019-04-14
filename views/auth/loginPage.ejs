@@ -1,0 +1,25 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/login-form.css">        
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    <div class="login-form">
+        <form action="/login" method="POST">
+            <br><br>
+            <select name="usertype">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="parent">Parent</option>
+            </select>
+            <br><br>
+            <input type="text" name="userid" placeholder="User Id">
+            <br><br>
+            <input type="password" name="password" placeholder="Password">
+            <br><br>
+            <button type="submit" class="postlogin-btn">Login</button>
+        </form>
+        <a href="/change-password">Change Password</a> | <a href="/login" >Forgot Password</a>
+    </div>
+<%- include('../includes/end.ejs') %>

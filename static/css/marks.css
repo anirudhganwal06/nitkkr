@@ -1,0 +1,42 @@
+/* TEACHER'S ADDING MARKS TABLE */
+
+body {
+    font-family: Arial;
+}
+
+select {
+    width: 10rem;
+    height: 2rem;
+    background-color : rgb(94, 94, 255);
+    border-radius: 0.3rem;
+}
+
+option {
+    background-color: rgb(133, 152, 255);  
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: rgb(72, 72, 255);
+}
+  
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.saveBtn {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.3rem;
+    background-color: rgb(91, 255, 91);
+
+}

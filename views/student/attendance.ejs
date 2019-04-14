@@ -1,0 +1,80 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/marks.css">
+
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+    <main class="main-body">
+        <br>
+        <h1>ATTENDANCE</h1>
+        <br>
+        <br>
+        <% let percentage; %>
+        <table>
+            <tr>
+                <th>Subject</th>
+                <th>Your Attendance</th>
+                <th>Total Attendance </th>
+                <th>Pencentage</th>
+            </tr>
+            <tr>
+                <td><%= subjectNames[0] %></td>
+                <td><%= user.attendance.ph %></td>
+                <td><%= totalAttendance[0] %></td>
+                <% if (totalAttendance[0] == 0) { percentage = 0; } else { percentage = user.attendance.ph / totalAttendance[0] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[1] %></td>
+                <td><%= user.attendance.ch %></td>
+                <td><%= totalAttendance[1] %></td>
+                <% if (totalAttendance[1] == 0) { percentage = 0; } else { percentage = user.attendance.ch / totalAttendance[1] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[2] %></td>
+                <td><%= user.attendance.ma %></td>
+                <td><%= totalAttendance[2] %></td>
+                <% if (totalAttendance[2] == 0) { percentage = 0; } else { percentage = user.attendance.ma / totalAttendance[2] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[3] %></td>
+                <td><%= user.attendance.dc1 %></td>
+                <td><%= totalAttendance[3] %></td>
+                <% if (totalAttendance[3] == 0) { percentage = 0; } else { percentage = user.attendance.dc1 / totalAttendance[3] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[4] %></td>
+                <td><%= user.attendance.dc2 %></td>
+                <td><%= totalAttendance[4] %></td>
+                <% if (totalAttendance[4] == 0) { percentage = 0; } else { percentage = user.attendance.dc2 / totalAttendance[4] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[5] %></td>
+                <td><%= user.attendance.dc3 %></td>
+                <td><%= totalAttendance[5] %></td>
+                <% if (totalAttendance[5] == 0) { percentage = 0; } else { percentage = user.attendance.dc3 / totalAttendance[5] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[6] %></td>
+                <td><%= user.attendance.wd %></td>
+                <td><%= totalAttendance[6] %></td>
+                <% if (totalAttendance[6] == 0) { percentage = 0; } else { percentage = user.attendance.wd / totalAttendance[6] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+            <tr>
+                <td><%= subjectNames[7] %></td>
+                <td><%= user.attendance.eco %></td>
+                <td><%= totalAttendance[7] %></td>
+                <% if (totalAttendance[7] == 0) { percentage = 0; } else { percentage = user.attendance.eco / totalAttendance[7] * 100; } %>
+                <td><%= percentage %>%</td>
+            </tr>
+        </table>
+    </main>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,80 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/marks.css">
+    <style>
+        table {
+            
+            padding: 0.5rem;
+        }
+    </style>
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main class="main-body">
+        <br>
+        <h1>MARKS</h1>
+        <br><br>
+            <table>
+                <tr>
+                    
+                    <th>Subject</th>
+                    <th>Mid Sem - 1 </th>
+                    <th>Mid Sem - 2 </th>
+                    <th>End Sem </th>
+                    
+                </tr>
+                <tr>
+                    <td><%= subjectNames[0] %></td>
+                    <td><%= user.marks.midsem1.ph %></td>
+                    <td><%= user.marks.midsem2.ph %></td>
+                    <td><%= user.marks.endsem.ph %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[1] %></td>
+                    <td><%= user.marks.midsem1.ch %></td>
+                    <td><%= user.marks.midsem2.ch %></td>
+                    <td><%= user.marks.endsem.ch %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[2] %></td>
+                    <td><%= user.marks.midsem1.ma %></td>
+                    <td><%= user.marks.midsem2.ma %></td>
+                    <td><%= user.marks.endsem.ma %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[3] %></td>
+                    <td><%= user.marks.midsem1.dc1 %></td>
+                    <td><%= user.marks.midsem2.dc1 %></td>
+                    <td><%= user.marks.endsem.dc1 %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[4] %></td>
+                    <td><%= user.marks.midsem1.dc2 %></td>
+                    <td><%= user.marks.midsem2.dc2 %></td>
+                    <td><%= user.marks.endsem.dc2 %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[5] %></td>
+                    <td><%= user.marks.midsem1.dc3 %></td>
+                    <td><%= user.marks.midsem2.dc3 %></td>
+                    <td><%= user.marks.endsem.dc3 %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[6] %></td>
+                    <td><%= user.marks.midsem1.wd %></td>
+                    <td><%= user.marks.midsem2.wd %></td>
+                    <td><%= user.marks.endsem.wd %></td>
+                </tr>
+                <tr>
+                    <td><%= subjectNames[7] %></td>
+                    <td><%= user.marks.midsem1.eco %></td>
+                    <td><%= user.marks.midsem2.eco %></td>
+                    <td><%= user.marks.endsem.eco %></td>
+                </tr>
+                
+            </table>
+
+    </main>
+
+<%- include('../includes/end.ejs') %>

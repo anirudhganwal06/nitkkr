@@ -1,0 +1,16 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/static/css/personalInfo.css">
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    <main class="main-body">
+        <h1 class="nameOfCandidate"><%= user.name %></h1>
+        <h3 class="infoOfCandidate">Roll Number : <%= user.userid %></h3>
+        <h3>Email id : <%= user.email %></h3>
+        <h3>Branch : <%= user.branch %></h3>
+        <h3>Semester : <%= user.semester %></h3>
+        <br><br>
+    </main>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,89 @@
+<div class="navbar">
+    <ul>
+        <li>
+            <a href='/'>
+                <button>
+                    HOME
+                </button>
+            </a>
+        </li>
+        <% if(!req.session.isLoggedIn) { %>
+            <li>
+                <a href="/admin/add-student">
+                    <button>
+                        ADD STUDENT
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/add-teacher">
+                    <button>
+                        ADD TEACHER
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="/our-development-team">
+                    <button>
+                        OUR TEAM
+                    </button>
+                </a>
+            </li>
+            <!-- <li>
+                <a href="/admin/add-subject">
+                    <button>
+                        ADD SUBJECT
+                    </button>
+                </a>
+            </li> -->
+        <% } %>
+        <!-- <li><a href='/admin/add-student'>ADD STUDENT</a></li> -->
+        <% if(req.session.isLoggedIn) { %>
+            <% if (req.session.usertype === 'student') { %>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>'>
+                        <button>
+                            PERSONAL INFO
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>/marks'>
+                        <button>
+                            MARKS
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>/attendance'>
+                        <button>
+                            ATTENDANCE
+                        </button>
+                    </a>
+                </li>
+            <% } else if (req.session.usertype === 'teacher') { %>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>'>
+                        <button>
+                            PERSONAL INFO
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>/add-marks'>
+                        <button>
+                            ADD MARKS
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href='/<%= req.session.usertype %>/<%= user.userid %>/add-attendance'>
+                        <button>
+                            ADD ATTENDANCE
+                        </button>
+                    </a>
+                </li>
+            <% } %>
+        <% } %>
+    </ul>
+</div>

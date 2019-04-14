@@ -1,0 +1,16 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/static/css/personalInfo.css">
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+
+    <main class="main-body">
+            <h1 class="nameOfCandidate"><%= user.name %></h1>
+            <h3 class="infoOfCandidate">Teacher id : <%= user.userid %></h3>
+            <h3></h3>
+            <h3>Email id : <%= user.email %></h3>
+        </main>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,19 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/login-form.css">    
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    <div class="login-form">
+        <form action="/admin/add-subject" method="POST">
+            <br><br>
+            <input type="string" name="userid" placeholder="Id">
+            <br><br>
+            <input type="text" name="name" placeholder="Name">            
+            <br><br>
+            <button type="submit">Add Subject</button>
+        </form>
+        
+    </div>
+<%- include('../includes/end.ejs') %>

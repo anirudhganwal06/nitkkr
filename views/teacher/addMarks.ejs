@@ -1,0 +1,40 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/marks.css">
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+
+    <main class="main-body">
+        <form class="addMarksForm" action="/teacher/<%= req.session.userid %>/add-marks" method="POST">
+            <br>
+            <h1>MARKS</h1>
+            <br><br>
+            <select name="exam" >
+                <option value="midsem1">Mid Sem 1</option>
+                <option value="midsem2">Mid Sem 2</option>
+                <option value="endsem">End Sem</option>
+            </select>
+            <br><br><br>
+            <% let i = 0; %>
+            <table>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+                <% for(i = 0; i < studentUserIds.length; i++) { %>
+                    <tr>
+                        <td><%= studentUserIds[i] %></td>
+                        <td><%= studentName[i] %></td>
+                        <td><input type="number" name="studentMarks"></td>
+                    </tr>
+                <% } %>
+            </table>
+            <br><br>
+            <button type="submit" class="saveBtn">SAVE AND ANNOUNCE</button>
+                
+        </form>
+    </main>
+
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,66 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/marks.css">
+    <style>
+        .checkboxes {
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        }
+    </style>
+
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+
+    <main class="main-body">
+        <br>
+        <h1>ATTENDANCE</h1>
+        <br>
+        <br>
+        <br>
+        <form action="/teacher/<%= req.session.userid %>/add-attendance" method="POST">
+            <% let i=0; %>
+            <table>
+                <tr>
+                    <th>
+                        Roll No.
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Attendance
+                    </th>
+                </tr>
+            <% for (let studentUserId of studentUserIds) { %>
+                <tr>
+                    <td>
+                        <%= studentUserIds[i] %>
+                    </td>
+                    <td>
+                        <%= studentNames[i] %> 
+                    </td>
+                    <td>
+                        <input type="checkbox" class="checkboxes" name="presentStudents" value="<%= studentUserIds[i++] %>"> 
+                    </td>
+                </tr>
+            <% } %>
+            </table>
+            <br>
+            <p style="color: red"><b>Once submitted, you will not be able to change anybody's attendance!</b></p>
+            <input id="confirmbox" type="text" placeholder="Type submit" onkeyup="confirm();"> <br><br>
+            <button type="submit" id="saveBtn" disabled>Submit Attendance</button>
+        </form>
+        <script>
+            let confirm = () => {
+                console.log('keyup'); 
+                if (document.getElementById("confirmbox").value === 'submit') {
+                    document.getElementById("saveBtn").disabled = false;
+                }
+            }
+        </script>
+    </main>
+    
+
+<%- include('../includes/end.ejs') %>

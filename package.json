@@ -1,0 +1,28 @@
+{
+  "name": "nitk-students-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "heroku app.js"
+  },
+  "author": "Anirudh",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "connect-session-sequelize": "^6.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.22",
+    "mysql2": "^1.6.5",
+    "nodemailer": "^5.1.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "sequelize": "^5.1.0"
+  }
+}

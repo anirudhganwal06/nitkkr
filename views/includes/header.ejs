@@ -1,0 +1,16 @@
+<header>
+    <div class="heading">
+        <img id="nitklogo" src="http://nitkkr.ac.in/docs/NITKKR_logo.png">
+        <h1 class="websiteHeading">National Institue Of Technology, Kurukshetra</h1>
+        <h1 id="ioni">Institution Of National Importance</h1>
+        <% if(req.session.isLoggedIn) { %>
+            <form action="/<%= req.session.userid %>/logout" method="POST">
+                <button class="login-btn" type="submit">Logout</button>
+            </form>
+        <% } else { %>    
+        <a href="/login"><div class="login-btn">
+                Login
+        </div></a>
+        <% } %>
+    </div>
+</header>

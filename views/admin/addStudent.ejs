@@ -1,0 +1,31 @@
+<%- include('../includes/start.ejs') %>
+    <link rel="stylesheet" type="text/css" href="/css/login-form.css">    
+    
+<%- include('../includes/headBody.ejs') %>
+    <%- include('../includes/header.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
+
+    <div class="login-form">
+        <form action="/admin/add-student" method="POST">
+            <br><br>
+            <input type="string" name="userid" placeholder="User id">
+            <br><br>
+            <input type="text" name="name" placeholder="Name">            
+            <br><br>
+            <input type="email" name="email" placeholder="Email">
+            <br><br>
+            <input type="password" name="password" placeholder="Password">
+            <br><br>
+            <select name="branch">
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+            </select>
+            <br><br>
+            <input type="number" name="semester" placeholder="Semester">
+            <br><br>
+            <button type="submit">Add Student</button>
+        </form>
+        
+    </div>
+<%- include('../includes/end.ejs') %>
