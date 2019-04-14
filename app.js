@@ -16,13 +16,18 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "static")));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(
-  session({
-    secret: "my secret",
-    resave: false,
-    saveUninitialised: false
-  })
-);
+// app.use(
+//   session({
+//     secret: "my secret",
+//     resave: false,
+//     saveUninitialised: false
+//   })
+// );
+app.use(express.session({
+  secret: 'topsecret',
+  maxAge: new Date(Date.now() + 3600000),
+  store: new mongoStore({ db: mongoose.connections[0].db })
+}));
 
 app.set("views", "views");
 app.set("view engine", "ejs");
